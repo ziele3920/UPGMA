@@ -1,4 +1,4 @@
 from ete3 import Tree
 
-t = Tree("((a,b),(dupa, (kupa, kal)));")
+t = Tree("((kotek, (upa, pumpa)), (a,b),(dupa, (kupa, kal)));")
 t.show()
