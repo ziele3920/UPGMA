@@ -2,8 +2,8 @@ import string
 
 
 class Cluster:
-    def __init__(self, name: string, subclusters: list, baseDistMtrixIndex: int, isSingle: bool):
+    def __init__(self, name: string, subclusters: list, baseDistMtrixIndexes: list, isSingle: bool):
         self.name = name
         self.subclusters = subclusters
-        self.baseDistMtrixIndex = baseDistMtrixIndex
+        self.baseDistMtrixIndexes = baseDistMtrixIndexes
         self.isSingle = isSingle

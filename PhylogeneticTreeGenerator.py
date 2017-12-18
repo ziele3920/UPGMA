@@ -10,10 +10,10 @@ names = np.genfromtxt("cc.csv", dtype=float, delimiter=',', names=True).dtype.na
 clusters = list()
 
 for x in range(0, len(names)):
-    clusters.append(Cluster.Cluster(names[x],  None, x, True))
+    clusters.append(Cluster.Cluster(names[x],  None, list([x]), True))
 
 matrix = Matrix.Matrix(clusters, dataMatrix)
-UPGMA.calculateTree(matrix)
+UPGMA.calculateTree(matrix.distanceMatrix, matrix)
 
 t = Tree("((kotek, (upa, pumpa)), (a,b),(dupa, (kupa, kal)));")
 t.show()
