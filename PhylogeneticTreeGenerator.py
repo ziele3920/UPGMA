@@ -15,12 +15,18 @@ for x in range(0, len(names)):
 matrix = Matrix.Matrix(clusters, dataMatrix)
 mergingList = UPGMA.calculateTree(matrix.distanceMatrix, matrix)
 
+treeStringList = list()
 for pair in mergingList:
-    print(pair.cluster1.name + " " + pair.cluster2.name)
-    
+    print(pair.cluster1.name + " & " + pair.cluster2.name)
+    tmps = ""
+    if pair.cluster1.isSingle:
+        tmps = "(" + pair.cluster1.name + ", "
+    else
+        
+    if pair.cluster2.isSingle:
+        tmps += pair.cluster2.name + ")"
+    treeStringList.append(tmps)
 
-
-
-t = Tree("(((a, b), c), (z, x));")
+t = Tree("(Tuna, ((Dog, (Monkey, Man)), (Chicken, Turtle)));")
 t.show()
 

@@ -29,7 +29,7 @@ def calculateNewMatrix(baseDistMatrix, matrix: Matrix, mergingList):
     secondMergingCluster = matrix.clusters[minIndex[1]]
     newIndexes = list(firstMergingCluster.baseDistMtrixIndexes)
     newIndexes = newIndexes + list(secondMergingCluster.baseDistMtrixIndexes)
-    newCluster = Cluster.Cluster(firstMergingCluster.name + secondMergingCluster.name, list([firstMergingCluster, secondMergingCluster]), newIndexes, False)
+    newCluster = Cluster.Cluster(firstMergingCluster.name + " " + secondMergingCluster.name, list([firstMergingCluster, secondMergingCluster]), newIndexes, False)
     mergingList.append(MergedPair.MergedPair(firstMergingCluster, secondMergingCluster, baseDistMatrix[minIndex[0], minIndex[1]]))
     newDistanceMatrix = matrix.distanceMatrix.copy()
     newClusters = list(matrix.clusters)
