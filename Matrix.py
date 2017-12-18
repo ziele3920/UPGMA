@@ -3,7 +3,7 @@ import sys
 
 
 class Matrix:
-    def __init__(self, clusters, distanceMatrix: np.ndarray):
+    def __init__(self, clusters: list, distanceMatrix: np.ndarray):
         self.clusters = clusters
         self.distanceMatrix = distanceMatrix
 
