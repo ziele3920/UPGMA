@@ -13,8 +13,14 @@ for x in range(0, len(names)):
     clusters.append(Cluster.Cluster(names[x],  None, list([x]), True))
 
 matrix = Matrix.Matrix(clusters, dataMatrix)
-UPGMA.calculateTree(matrix.distanceMatrix, matrix)
+mergingList = UPGMA.calculateTree(matrix.distanceMatrix, matrix)
 
-t = Tree("((kotek, (upa, pumpa)), (a,b),(dupa, (kupa, kal)));")
+for pair in mergingList:
+    print(pair.cluster1.name + " " + pair.cluster2.name)
+    
+
+
+
+t = Tree("(((a, b), c), (z, x));")
 t.show()
 
