@@ -4,6 +4,7 @@ import numpy as np
 import Cluster
 import Matrix
 import UPGMA
+from Tree import GraphicalTree
 
 dataMatrix = np.genfromtxt("cc.csv", dtype=float, delimiter=',', skip_header=1)
 names = np.genfromtxt("cc.csv", dtype=float, delimiter=',', names=True).dtype.names
@@ -15,18 +16,13 @@ for x in range(0, len(names)):
 matrix = Matrix.Matrix(clusters, dataMatrix)
 mergingList = UPGMA.calculateTree(matrix.distanceMatrix, matrix)
 
-treeStringList = list()
+graphicalTree = GraphicalTree()
+
 for pair in mergingList:
     print(pair.cluster1.name + " & " + pair.cluster2.name)
-    tmps = ""
-    if pair.cluster1.isSingle:
-        tmps = "(" + pair.cluster1.name + ", "
-    else
-        
-    if pair.cluster2.isSingle:
-        tmps += pair.cluster2.name + ")"
-    treeStringList.append(tmps)
+    graphicalTree.addNode(pair.cluster1, pair.cluster2)
 
-t = Tree("(Tuna, ((Dog, (Monkey, Man)), (Chicken, Turtle)));")
+t = Tree(graphicalTree.nodes[0].graphicalString + ";")
 t.show()
+
 
