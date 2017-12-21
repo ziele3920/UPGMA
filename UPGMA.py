@@ -5,8 +5,9 @@ import Matrix
 import MergedPair
 
 
-def calculateTree(baseDistMatrix, matrix: Matrix):
+def calculateTree(matrix: Matrix):
     currentMatrix = matrix
+    baseDistMatrix = matrix.distanceMatrix
     matrixList = list([matrix])
     mergingList = list()
     while currentMatrix.distanceMatrix.shape[0] > 2:
