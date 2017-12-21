@@ -1,11 +1,8 @@
 import string
 
+from ete3 import Tree
+
 import Cluster
-
-
-class Tree:
-    def __init__(self):
-        self.nodes = list()
 
 
 class TreeNode:
@@ -38,8 +35,16 @@ class GraphicalNode:
 
 
 class GraphicalTree:
-    def __init__(self):
+    def __init__(self, mergingList):
         self.nodes = list()
+
+        for pair in mergingList:
+            print(pair.cluster1.name + " & " + pair.cluster2.name)
+            self.addNode(pair.cluster1, pair.cluster2)
+
+    def showTree(self):
+        t = Tree(self.nodes[0].graphicalString + ";")
+        t.show()
 
     def addNode(self, cluster1: Cluster, cluster2: Cluster):
         cluster1String = ""
